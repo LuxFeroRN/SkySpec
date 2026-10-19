@@ -14,10 +14,10 @@ from . import agents
 
 gym.register(
     id="Template-Drone-v0",
-    entry_point="isaaclab.envs:ManagerBasedRLEnv",
+    entry_point=f"{__name__}.drone_env_cfg:QuadcopterEnv",
     disable_env_checker=True,
     kwargs={
-        "env_cfg_entry_point": f"{__name__}.drone_env_cfg:DroneEnvCfg",
+        "env_cfg_entry_point": f"{__name__}.drone_env_cfg:QuadcopterEnvCfg",
         "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
     },
 )
